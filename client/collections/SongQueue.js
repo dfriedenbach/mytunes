@@ -7,6 +7,12 @@ var SongQueue = Songs.extend({
         this.playFirst();
       }
     }, this);
+    this.on('ended', function() {
+      this.shift();
+      if (this.length) {
+        this.playFirst();
+      }
+    }, this);
   },
 
   playFirst: function(){
