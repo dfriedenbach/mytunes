@@ -18,12 +18,10 @@ var AppModel = Backbone.Model.extend({
     }, this);
 
     params.library.on('enqueue', function(song){
-      this.get('songQueue').push(song);
-      var url = this.get('currentSong').get('url')
-      if (url === undefined) {
-        this.get('songQueue').playFirst();
-      }
+      this.get('songQueue').add(song);
     }, this);
+
+   
   }
 
 });
