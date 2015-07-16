@@ -8,7 +8,6 @@ var DownvoteView = Backbone.View.extend({
     'click': function(e) {
       e.stopPropagation();
       this.model.set('voteCount', this.model.get('voteCount') - 1);
-      console.log("Downvoted!");
     }
   },
 
