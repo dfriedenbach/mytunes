@@ -21,6 +21,10 @@ var SongQueueView = Backbone.View.extend({
         return new SongQueueEntryView({model: song}).render();
       })
     );
+  },
+
+  dequeue: function() {
+    this.collection.remove(this.model)
   }
 
 });

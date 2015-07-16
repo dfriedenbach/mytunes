@@ -14,7 +14,13 @@ var SongQueue = Songs.extend({
       }
     }, this);
     this.on('dequeue', function(song) {
-      this.remove(song);  
+      this.remove(song);
+      if (this.length >= 1) {
+        this.playFirst();
+      } else {
+
+      }
+
     }, this);
   },
 
