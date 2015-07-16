@@ -17,9 +17,7 @@ var AppView = Backbone.View.extend({
     }.bind(this));
 
     this.songQueueView.collection.on('dequeue', function() {
-      if (this.model.get('songQueue').length) {
-        this.model.get('songQueue').playFirst();
-      } else {
+      if (!this.model.get('songQueue').length) {
         this.model.set('currentSong', null);
       }
     }, this);
