@@ -13,10 +13,7 @@ var AppView = Backbone.View.extend({
     }, this);
 
     this.playerView.$el.on('ended', function(model){
-      this.model.get('songQueue').shift();
-      if (this.model.get('songQueue').length) {
-        this.model.get('songQueue').playFirst();
-      }
+      this.model.get('songQueue').at(0).ended();
     }.bind(this));
 
     this.songQueueView.collection.on('dequeue', function() {
