@@ -4,3 +4,5 @@ var Songs = Backbone.Collection.extend({
   model: SongModel
 
 });
+
+//triggering an event in SongModel should trigger an event here too.
