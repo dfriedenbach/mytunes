@@ -23,7 +23,7 @@ var AppView = Backbone.View.extend({
       if (this.model.get('songQueue').length) {
         this.model.get('songQueue').playFirst();
       } else {
-        this.playerView.setSong(null);
+        this.model.set('currentSong', null);
       }
     }, this);
   },
